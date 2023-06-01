@@ -396,3 +396,6 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+/test-automation.dev/output/*
+/test-automation.dev/cache/*
