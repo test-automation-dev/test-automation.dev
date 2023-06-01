@@ -1,5 +1,7 @@
-Title: My First Statiq page
 ---
-# Hello World!
+title: Test-Automation.dev
+---
 
-Hello from my first Statiq page.
++------------------------------------------+
++[.NET](https://dotnet.test-automation.dev)+
++------------------------------------------+
