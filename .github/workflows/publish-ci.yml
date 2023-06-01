@@ -16,7 +16,7 @@ jobs:
       DOTNET_NOLOGO: true
     steps:
       - uses: actions/checkout@master
-      with:
+        with:
         submodules: recursive
   
       - uses: actions/setup-dotnet@v1
