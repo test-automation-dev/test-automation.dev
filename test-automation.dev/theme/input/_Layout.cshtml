@@ -7,27 +7,29 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="/styles.css" rel="stylesheet"/>
+        <link href="/assets/css/styles.css" rel="stylesheet"/>
     </head>
-    <body class="min-h-full">
-        <div class="container mx-auto ">
-            <div class="text-center">
-                <h1>@title</h1>
+    <body >
+        <header class="header">
+            <div class="center-vertical center-horizontal" style="height: 5vh;">
+                <h1>
+                    <a class="no-link" href="/">Test-Automation.dev</a>
+                </h1>
             </div>
-            <div>
+        </header>
+        <div class="content center-horizontal ">
+            <div class="center-vertical"><h1>@title</h1></div>
+            <div >
                 @RenderBody()
             </div>
+            
         </div>
+
+        <div class="spacer"></div>
         
-        <footer
-            class="bg-neutral-200 text-center dark:bg-neutral-700 lg:text-left sticky bottom-0 ">
-            <div class="p-4 text-center text-neutral-700 dark:text-neutral-200">
-                © 2023 Copyright:
-                <a
-                class="text-neutral-800 dark:text-neutral-400"
-                href="https://tailwind-elements.com/"
-                >Tailwind Elements</a
-                >
+        <footer class="footer">
+            <div class="center-vertical center-horizontal" style="height: 5vh;">
+                © 2023 Copyright:<a href="https://willich.io/" >Andreas "SabotageAndi" Willich</a> - <a href="impressum.html">Impressum</a>
             </div>
         </footer>
     </body>

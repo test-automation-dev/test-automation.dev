@@ -51,14 +51,10 @@ jobs:
         id: pages
         uses: actions/configure-pages@v3
 
-      - name: NPM Install
-        run: npm install
-        working-directory: ./test-automation.dev/node
+      # - name: NPM Install
+      #   run: npm install
+      #   working-directory: ./test-automation.dev/node
         
-      - name: Tailwind CLI
-        run: npx tailwind build -c ./tailwind.config.js -i ./../theme/input/_site.css -o ./../output/styles.css
-        working-directory: ./test-automation.dev/node
-
       - run: dotnet run --project ./test-automation.dev/test-automation.dev.csproj -- deploy
   
       - name: Upload artifact
