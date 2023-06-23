@@ -17,25 +17,48 @@
                 </h1>
             </div>
         </header>
+
         <div class="content center-horizontal ">
             <div class="center-vertical"><h1>@title</h1></div>
             <div>
-                
-
                 @if (Document.GetBool("includeToc", true))
                 {
-                    foreach (IDocument post in this.OutputPages.GetDescendantsOf(this.Document, false))
+                    var pages = this.OutputPages.GetDescendantsOf(this.Document, false);
+
+                    if (pages.Count() == 0)
                     {
-                        <div class="post">
-                            <h2>@post.GetString("title")</h2>
+                        var parent = this.OutputPages.GetAncestorsOf(this.Document).FirstOrDefault();
+
+                        if (parent != null)
+                        {
+                            pages = this.OutputPages.GetDescendantsOf(parent, false);
+                        }
+                    }
+
+                    var groups = from p in pages
+                                 group p by System.IO.Path.GetDirectoryName(p.Source.ToString()) into g
+                                 orderby g.Key
+                                 select g;
+
+
+                    foreach (var group in groups)
+                    {
+                        <div class="toc-group">
+                            <h2>@System.IO.Path.GetFileName(group.Key)</h2>
+                            <ul>
+                                @foreach (var page in group)
+                                {
+                                    <li>
+                                        @Html.DocumentLink(page, page.GetString("title"))
+                                    </li>
+                                }
+                            </ul>
                         </div>
                     }
                 }
 
                 @RenderBody() 
-
             </div>
-            
         </div>
 
         <div class="spacer"></div>
