@@ -19,8 +19,21 @@
         </header>
         <div class="content center-horizontal ">
             <div class="center-vertical"><h1>@title</h1></div>
-            <div >
-                @RenderBody()
+            <div>
+                
+
+                @if (Document.GetBool("includeToc", true))
+                {
+                    foreach (IDocument post in this.OutputPages.GetDescendantsOf(this.Document, false))
+                    {
+                        <div class="post">
+                            <h2>@post.GetString("title")</h2>
+                        </div>
+                    }
+                }
+
+                @RenderBody() 
+
             </div>
             
         </div>
@@ -29,7 +42,7 @@
         
         <footer class="footer">
             <div class="center-vertical center-horizontal" style="height: 5vh;">
-                © 2023 Copyright:<a href="https://willich.io/" >Andreas "SabotageAndi" Willich</a> - <a href="impressum.html">Impressum</a>
+                © 2023 Copyright:<a href="https://willich.io/" >Andreas "SabotageAndi" Willich</a> - <a href="/impressum.html">Impressum</a>
             </div>
         </footer>
     </body>

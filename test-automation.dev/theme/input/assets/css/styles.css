@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'FiraCode';
-    src: url('../fonts/FiraCode-Regular.ttf') format('truetype');
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Regular.ttf') format('truetype');
   }
 
 body {
@@ -8,7 +8,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    font-family: 'FiraCode', Fallback, sans-serif;
+    font-family: 'Roboto', Fallback, sans-serif;
     color: #FBFFFE;
     background-color: #878188;
 }
