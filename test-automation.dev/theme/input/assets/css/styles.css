@@ -13,11 +13,10 @@ body {
     background-color: #878188;
 }
 
-.content{
+.placeholder {
     height: 80vh;
     align-items: stretch;
-    width: 75%;
-    margin: auto;
+    width: 100%;
 }
 
 .spacer {
@@ -89,17 +88,53 @@ a:link {
     color: #FAA916;
   }
   
-  /* visited link */
-  a:visited {
-    color: #FAA916;
-  }
+/* visited link */
+a:visited {
+  color: #FAA916;
+}
+
+/* mouse over link */
+a:hover {
+  color: #FAA916;
+}
+
+/* selected link */
+a:active {
+  color: #FAA916;
+}
+
+.toc-group > h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.toc-group > ul {
+  list-style-type: none;
+}
+
+.toc-group > ul > li {
+    margin-left: 10px;
+    font-size: 1.2rem;
+}
+
+.toc-content {
+  display: flex;
+}
+
+.toc {
+  width: max-content;
   
-  /* mouse over link */
-  a:hover {
-    color: #FAA916;
-  }
-  
-  /* selected link */
-  a:active {
-    color: #FAA916;
-  }
+  padding-left: 1vh;
+  padding-right: 1vh;
+}
+
+.content {
+  padding-left: 1vh;
+  padding-right: 1vh;
+}
+
+/* Path: test-automation.dev\theme\input\assets\css\styles.css */
