@@ -23,53 +23,51 @@
         <div class="placeholder center-horizontal ">
             <div class="center-vertical"><h1>@title</h1></div>
             <div class="toc-content"> 
+            @if (Document.GetBool("includeToc", true))
+            {
                 <div class="toc">
-                    @if (Document.GetBool("includeToc", true))
+                @{
+                    var pages = this.OutputPages.GetDescendantsOf(this.Document, false);
+
+                    if (pages.Count() == 0)
                     {
-                        var pages = this.OutputPages.GetDescendantsOf(this.Document, false);
+                        var parent = this.OutputPages.GetAncestorsOf(this.Document).FirstOrDefault();
 
-                        if (pages.Count() == 0)
+                        if (parent != null)
                         {
-                            var parent = this.OutputPages.GetAncestorsOf(this.Document).FirstOrDefault();
-
-                            if (parent != null)
-                            {
-                                pages = this.OutputPages.GetDescendantsOf(parent, false);
-                            }
-                        }
-
-                        var groups = from p in pages
-                                    let topic_title = p.GetString("topic_title", "Title not defined")
-                                    let order = p.GetString("order", "0")
-                                    group p by new { topic_title, order } into g
-                                    select new {
-                                        TopicTitle = g.Key.topic_title,
-                                        Order = g.Key.order,
-                                        Pages = g.ToList()
-                                    };
-
-                        foreach (var group in groups.OrderBy(x => x.Order))
-                        {
-                            <div class="toc-group">
-
-                                <h2>@group.TopicTitle</h2>
-                                <ul>
-                                    @foreach (var page in group.Pages)
-                                    {
-                                        <li>
-                                            @Html.DocumentLink(page, page.GetString("title"))
-                                        </li>
-                                    }
-                                </ul>
-                            </div>
+                            pages = this.OutputPages.GetDescendantsOf(parent, false);
                         }
                     }
-                    else 
+
+                    var groups = from p in pages
+                                let topic_title = p.GetString("topic_title", "Title not defined")
+                                let order = p.GetString("order", "0")
+                                group p by new { topic_title, order } into g
+                                select new {
+                                    TopicTitle = g.Key.topic_title,
+                                    Order = g.Key.order,
+                                    Pages = g.ToList()
+                                };
+
+                    foreach (var group in groups.OrderBy(x => x.Order))
                     {
-                        <div></div>
+                        <div class="toc-group">
+
+                            <h2>@group.TopicTitle</h2>
+                            <ul>
+                                @foreach (var page in group.Pages)
+                                {
+                                    <li>
+                                        @Html.DocumentLink(page, page.GetString("title"))
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    }
                     }
                     
                 </div>
+            }
                 <div class="content">
                     @RenderBody() 
                 </div>

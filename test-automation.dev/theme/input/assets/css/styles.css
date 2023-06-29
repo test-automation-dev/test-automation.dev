@@ -110,6 +110,7 @@ a:active {
     font-weight: 400;
     text-transform: uppercase;
     line-height: 1.2;
+    overflow: hidden;
 }
 
 .toc-group > ul {
@@ -126,13 +127,14 @@ a:active {
 }
 
 .toc {
-  width: max-content;
+  width: 15%;
   
   padding-left: 1vh;
   padding-right: 1vh;
 }
 
 .content {
+  width: 100%;
   padding-left: 1vh;
   padding-right: 1vh;
 }
