@@ -15,74 +15,69 @@
         <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
     </head>
     <body >
-        <header class="header">
-            <div class="left-vertical center-horizontal " style="height: 5vh;">
+        <div class="header">
+            <div class="left-vertical center-horizontal ">
                 <a class="no-link" href="/">
                     <img class="test-automation-header-logo" src="/assets/img/logo.svg" alt="Logo"  />
                 </a>
             </div>
-        </header>
-
-        <div class="placeholder center-horizontal ">
-            <div class="center-vertical"><h1>@title</h1></div>
-            <div class="toc-content"> 
-            @if (Document.GetBool("includeToc", true))
-            {
-                <div class="toc">
-                @{
-                    var pages = this.OutputPages.GetDescendantsOf(this.Document, false);
-
-                    if (pages.Count() == 0)
-                    {
-                        var parent = this.OutputPages.GetAncestorsOf(this.Document).FirstOrDefault();
-
-                        if (parent != null)
-                        {
-                            pages = this.OutputPages.GetDescendantsOf(parent, false);
-                        }
-                    }
-
-                    var groups = from p in pages
-                                let topic_title = p.GetString("topic_title", "Title not defined")
-                                let order = p.GetString("order", "0")
-                                group p by new { topic_title, order } into g
-                                select new {
-                                    TopicTitle = g.Key.topic_title,
-                                    Order = g.Key.order,
-                                    Pages = g.ToList()
-                                };
-
-                    foreach (var group in groups.OrderBy(x => x.Order))
-                    {
-                        <div class="toc-group">
-
-                            <h2>@group.TopicTitle</h2>
-                            <ul>
-                                @foreach (var page in group.Pages)
-                                {
-                                    <li>
-                                        @Html.DocumentLink(page, page.GetString("title"))
-                                    </li>
-                                }
-                            </ul>
-                        </div>
-                    }
-                    }
-                    
-                </div>
-            }
-                <div class="content">
-                    @RenderBody() 
-                </div>
-            </div>
         </div>
 
-        <div class="spacer"></div>
-        
-        <footer class="footer">
+        <div class="header-content-line" ></div>
+
+        <div class="toc">
+            @if (Document.GetBool("includeToc", true))
+            {
+                var pages = this.OutputPages.GetDescendantsOf(this.Document, false);
+
+                if (pages.Count() == 0)
+                {
+                    var parent = this.OutputPages.GetAncestorsOf(this.Document).FirstOrDefault();
+
+                    if (parent != null)
+                    {
+                        pages = this.OutputPages.GetDescendantsOf(parent, false);
+                    }
+                }
+
+                var groups = from p in pages
+                            let topic_title = p.GetString("topic_title", "Title not defined")
+                            let order = p.GetString("order", "0")
+                            group p by new { topic_title, order } into g
+                            select new {
+                                TopicTitle = g.Key.topic_title,
+                                Order = g.Key.order,
+                                Pages = g.ToList()
+                            };
+
+                foreach (var group in groups.OrderBy(x => x.Order))
+                {
+                    <div class="toc-group">
+
+                        <h2>@group.TopicTitle</h2>
+                        <ul>
+                            @foreach (var page in group.Pages)
+                            {
+                                <li>
+                                    @Html.DocumentLink(page, page.GetString("title"))
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                }
+            }
+        </div>
+
+        <div class="article">
+            @RenderBody() 
+        </div>
+
+        <div class="content-footer-line" ></div>
+
+        <div class="footer" >
             <div class="center-vertical center-horizontal" style="height: 5vh;">
-                © 2023 Copyright:<a href="https://willich.io/" >Andreas "SabotageAndi" Willich</a> - <a href="/impressum.html">Impressum</a>
+                © 2023 Copyright:&nbsp;<a href="https://willich.io/" >Andreas "SabotageAndi" Willich</a>&nbsp;-&nbsp;<a href="/impressum.html">Impressum</a>
             </div>
-        </footer>
+        </div>
     </body>
 </html>

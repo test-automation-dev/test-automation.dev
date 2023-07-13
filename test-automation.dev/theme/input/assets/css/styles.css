@@ -13,12 +13,19 @@
 
 body {
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
     font-family: 'Roboto', Fallback, sans-serif;
     color: #1B1B1B;
     background-color: #ffffff;
+
+    height: 100vh;
+    overflow:hidden;
+    display: grid;
+    grid-template: 
+      "header header header" auto
+      "header-content-line header-content-line header-content-line" auto
+      "toc article article" 1fr
+      "content-footer-line content-footer-line content-footer-line" auto
+      "footer footer footer" auto / auto 1fr auto;
 }
 
 .placeholder {
@@ -33,15 +40,14 @@ body {
 
 
 .header {
-    height: 8vh;
     background-color: #ffffff;
-    color: 7180b9;
+    grid-area: header;
 }
 
 .footer {
-    height: 5vh;
-    background-color: #1B1B1E;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #1B1B1E;
+    grid-area: footer;
 }
 
 .center-horizontal {
@@ -142,20 +148,33 @@ a:active {
 }
 
 .toc {
-  width: 15%;
-  
   padding-left: 1vh;
   padding-right: 1vh;
+  grid-area: toc;
 }
 
-.content {
-  width: 100%;
+.article {
   padding-left: 1vh;
   padding-right: 1vh;
+  grid-area: article;
 }
 
 .test-automation-header-logo {
   height: 8vh;
+}
+
+.header-content-line {
+  background-color: #1b1b1b;
+  grid-area: header-content-line;
+  height: 1px;
+  margin-bottom: 1vh;
+}
+
+.content-footer-line {
+  background-color: #1b1b1b;
+  grid-area: content-footer-line;
+  height: 1px;
+  margin-top: 1vh;
 }
 
 /* Path: test-automation.dev\theme\input\assets\css\styles.css */
