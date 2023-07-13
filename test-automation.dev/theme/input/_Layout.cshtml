@@ -1,7 +1,8 @@
 @using System.Diagnostics
 @using Statiq.Razor
+
 @{
-    string title = Document.GetString("title") ?? Document.GetString("SiteTitle");
+    var title = Document.GetString("PageTitle");
 }
 
 <!DOCTYPE html>
@@ -15,10 +16,10 @@
     </head>
     <body >
         <header class="header">
-            <div class="center-vertical center-horizontal" style="height: 5vh;">
-                <h1>
-                    <a class="no-link" href="/">Test-Automation.dev</a>
-                </h1>
+            <div class="left-vertical center-horizontal " style="height: 5vh;">
+                <a class="no-link" href="/">
+                    <img class="test-automation-header-logo" src="/assets/img/logo.svg" alt="Logo"  />
+                </a>
             </div>
         </header>
 
