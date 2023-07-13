@@ -21,7 +21,7 @@ body {
     overflow:hidden;
     display: grid;
     grid-template: 
-      "header header header" auto
+      "header header-title header-title" auto
       "header-content-line header-content-line header-content-line" auto
       "toc article article" 1fr
       "content-footer-line content-footer-line content-footer-line" auto
@@ -42,6 +42,11 @@ body {
 .header {
     background-color: #ffffff;
     grid-area: header;
+}
+
+.header-title {
+  background-color: #ffffff;
+  grid-area: header-title;
 }
 
 .footer {
