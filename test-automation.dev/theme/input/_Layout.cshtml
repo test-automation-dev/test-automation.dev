@@ -13,6 +13,22 @@
         <link href="/assets/css/styles.css" rel="stylesheet"/>
         <title>@title</title>
         <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+
+        <script src="https://giscus.app/client.js"
+                data-repo="test-automation-dev/test-automation.dev"
+                data-repo-id="R_kgDOJnD70Q"
+                data-category="Comments for Page"
+                data-category-id="DIC_kwDOJnD70c4CX4fk"
+                data-mapping="title"
+                data-strict="0"
+                data-reactions-enabled="0"
+                data-emit-metadata="0"
+                data-input-position="bottom"
+                data-theme="light"
+                data-lang="en"
+                crossorigin="anonymous"
+                async>
+        </script>
     </head>
     <body >
         <div class="header">
@@ -79,7 +95,13 @@
             @RenderBody() 
         </div>
 
+        @if (Document.GetBool("includeComments", true))
+        {
+            <div class="github-discussions giscus"></div>
+        }
+
         <div class="content-footer-line" ></div>
+        <div class="empty-grid-area"></div>
 
         <div class="footer" >
             <div class="center-vertical center-horizontal" style="height: 5vh;">

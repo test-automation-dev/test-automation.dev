@@ -24,6 +24,7 @@ body {
       "header header-title header-title" auto
       "header-content-line header-content-line header-content-line" auto
       "toc article article" 1fr
+      "toc github-discussions empty-grid-area" auto
       "content-footer-line content-footer-line content-footer-line" auto
       "footer footer footer" auto / auto 1fr auto;
 }
@@ -180,6 +181,14 @@ a:active {
   grid-area: content-footer-line;
   height: 1px;
   margin-top: 1vh;
+}
+
+.empty-grid-area {
+  grid-area: empty-grid-area;
+}
+
+.github-discussions {
+  grid-area: github-discussions;
 }
 
 /* Path: test-automation.dev\theme\input\assets\css\styles.css */
