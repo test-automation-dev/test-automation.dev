@@ -1,13 +1,14 @@
 ---
 title: Impressum
-includeToc: false
+includeInToc: false
+showToc: false
 ---
 
 ## English/Englisch
 
 **Owner**: Andreas Willich  
 **Place**: Vienna, Austria  
-**Subject of this website**: Wissensweitergabe und Meinungsäußerung  
+**Subject of this website**: Knowledge Exchange and opinion sharing
 
 ## German/Deutsch
 

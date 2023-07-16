@@ -49,7 +49,7 @@
         <div class="header-content-line" ></div>
 
         <div class="toc">
-            @if (Document.GetBool("includeToc", true))
+            @if (Document.GetBool("showToc", true))
             {
                 var pages = this.OutputPages.GetDescendantsOf(this.Document, false);
 
@@ -66,6 +66,8 @@
                 var groups = from p in pages
                             let topic_title = p.GetString("topic_title", "Title not defined")
                             let order = p.GetString("order", "0")
+                            let includeInToc = p.GetBool("includeInToc", true)
+                            where includeInToc
                             group p by new { topic_title, order } into g
                             select new {
                                 TopicTitle = g.Key.topic_title,
@@ -105,7 +107,7 @@
 
         <div class="footer" >
             <div class="center-vertical center-horizontal" style="height: 5vh;">
-                © 2023 Copyright:&nbsp;<a href="https://willich.io/" >Andreas "SabotageAndi" Willich</a>&nbsp;-&nbsp;<a href="/impressum.html">Impressum</a>
+                All Content licensed under CC-BY-SA-4.0 &nbsp;-&nbsp; © 2023 Copyright:&nbsp;<a href="/team.html" >Test-Automation.dev Team</a>&nbsp;-&nbsp;<a href="/impressum.html">Impressum</a>
             </div>
         </div>
     </body>
