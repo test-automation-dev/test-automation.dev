@@ -2,6 +2,7 @@
 title: Impressum
 includeInToc: false
 showToc: false
+includeComments: false
 ---
 
 ## English/Englisch
