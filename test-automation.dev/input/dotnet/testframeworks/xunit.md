@@ -8,7 +8,8 @@ It is used in the development of .NET Core and ASP.NET Core.
 
 For xUnit every public method with the attribute `[Fact]` in a public class is a test.
 
-Example: 
+Example:
+
 ```csharp
 using Xunit;
 
@@ -30,3 +31,103 @@ namespace TestProject
 
 Sometimes you want to write a multiple tests, where the only difference are some parameters.  
 For that xUnit has the `[Theory]` attribute.
+
+The data can be provided via different attributes:
+
+- `[InlineData]`
+- `[ClassData]`
+- `[MemberData]`
+
+### InlineData
+
+The `[InlineData]` attribute is the simplest way to provide data for a test. All data is provided in the attribute itself and is hard-coded.  
+If you have only a few test cases, this is the easiest way to provide the data.
+
+Example:
+
+```csharp
+using Xunit;
+
+namespace TestProject
+{
+    public class TestClass
+    {
+        [Theory]
+        [InlineData(1)]
+        [InlineData(2)]
+        [InlineData(3)]
+        public void TestMethod(int value)
+        {
+
+        }
+    }
+}
+
+```
+
+### ClassData
+
+The `[ClassData]` attribute is used to provide data from a class. The class must implement the `IEnumerable<object[]>` interface, so that it can be used as a data source.
+
+Example:
+
+```csharp
+using System.Collections.Generic;
+using Xunit;
+
+namespace TestProject
+{
+    class TestData : IEnumerable<object[]>
+    {
+        public IEnumerator<object[]> GetEnumerator()
+        {
+            yield return new object[] { 1 };
+            yield return new object[] { 2 };
+            yield return new object[] { 3 };
+        }
+
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+    }
+
+    public class TestClass
+    {
+        [Theory]
+        [ClassData(typeof(TestData))]
+        public void TestMethod(int value)
+        {
+
+        }
+    }
+}
+
+### MemberData
+
+The `[MemberData]` attribute is used to provide data from a static member of a class. The member must be public and static and return an `IEnumerable<object[]>`.
+
+Example:
+
+```csharp
+using System.Collections.Generic;
+using Xunit;
+
+namespace TestProject
+{
+    public class TestClass
+    {
+        public static IEnumerable<object[]> TestData()
+        {
+            yield return new object[] { 1 };
+            yield return new object[] { 2 };
+            yield return new object[] { 3 };
+        }
+
+        [Theory]
+        [MemberData(nameof(TestData))]
+        public void TestMethod(int value)
+        {
+
+        }
+    }
+}
+
+```
