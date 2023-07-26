@@ -164,6 +164,7 @@ a:active {
   padding-left: 1vh;
   padding-right: 1vh;
   grid-area: article;
+  overflow-y:scroll;
 }
 
 .test-automation-header-logo {
