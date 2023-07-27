@@ -48,3 +48,5 @@ Copyright: => $"Copyright © {DateTime.Now.Year}"
 PostSources: posts/**/*.html
 IsPost: => Outputs.FilterSources(Context.GetString("PostSources")).ContainsById(Document)
 Layout: /_Layout.cshtml
+Host: test-automation.dev
+LinksUseHttps: true
