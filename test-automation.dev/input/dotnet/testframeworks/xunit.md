@@ -131,3 +131,45 @@ namespace TestProject
 }
 
 ```
+
+## Tips and Tricks
+
+### Connect ILogger to Test Output
+
+Martin Costello created a nice NuGet Package (https://www.nuget.org/packages/MartinCostello.Logging.XUnit/) to bring the ILogger output to the test output.
+
+1. Add the NuGet Package to your test project
+1. Adjust your WebApplicationFactory that you call `p.AddXunit()`
+
+``` csharp
+public sealed class TestWebApplicationFactory : WebApplicationFactory<FakeEntrypoint>
+{
+    /// <inheritdoc />
+    public ITestOutputHelper? OutputHelper { get; set; }
+
+    /// <inheritdoc />
+    protected override void ConfigureWebHost(IWebHostBuilder builder)
+        => builder.ConfigureLogging((p) => p.AddXUnit(this));
+}
+```
+
+3. Add this method to your TestWebApplicationFactory
+
+``` csharp
+public void SetTestOutput(ITestOutputHelper testOutputHelper)
+{
+    Services.GetRequiredService<ITestOutputHelperAccessor>().OutputHelper = testOutputHelper;
+}
+```
+
+4. In every test class, you need to adjust the constructor to call the `SetTestOutput` method on the TestWebApplicationFactory
+
+``` csharp
+public class TestClass : IClassFixture<TestWebApplicationFactory>
+{
+    public TestClass(TestWebApplicationFactory factory, ITestOutputHelper testOutputHelper)
+    {
+        factory.SetTestOutput(testOutputHelper);
+    }
+}
+```
