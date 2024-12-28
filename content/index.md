@@ -1,6 +1,8 @@
 ---
-title: Welcome to Quartz
+title: Welcome to Test-Automation.dev
 ---
 
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+ Test-Automation.dev provides you explanations and examples for the various test automation libraries/tools/frameworks for various development ecosystems.
+
+
+![[dotnet-logo.svg]]
