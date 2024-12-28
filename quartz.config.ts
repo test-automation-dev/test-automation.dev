@@ -16,13 +16,13 @@ const config: QuartzConfig = {
       provider: "plausible",
     },
     locale: "en-US",
-    baseUrl: "quartz.jzhao.xyz",
+    baseUrl: "test-automation.dev",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
     generateSocialImages: false,
     theme: {
       fontOrigin: "googleFonts",
-      cdnCaching: true,
+      cdnCaching: false,
       typography: {
         header: "Schibsted Grotesk",
         body: "Source Sans Pro",
