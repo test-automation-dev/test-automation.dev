@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "test-automation.dev": {
-      "commandName": "Project",
-      "commandLineArgs": "deploy --debug"
-    }
-  }
-}

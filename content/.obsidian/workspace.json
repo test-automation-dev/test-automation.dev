@@ -1,0 +1,239 @@
+{
+  "main": {
+    "id": "c120dfc1d863ab22",
+    "type": "split",
+    "children": [
+      {
+        "id": "4e4fdb12fa0613e5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7be1f72bffeadfda",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Impressum.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Impressum"
+            }
+          },
+          {
+            "id": "46f47d8d759dbf7c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Home.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Home"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "718af665dc06061d",
+    "type": "split",
+    "children": [
+      {
+        "id": "3909546de598bc0f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1b6260e7926bbce4",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "46d362e2c5ab8fa0",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "f701dd13a52abc90",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "691f5185cf98520c",
+    "type": "split",
+    "children": [
+      {
+        "id": "2eff784e4c1775fb",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5501ca247686becf",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "466bad8582dffbcf",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "276df3f0cd128fe1",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "f29c95a6d9b470ce",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Home.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Home"
+            }
+          },
+          {
+            "id": "a7ade94a5bc6a2db",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
+    }
+  },
+  "active": "46f47d8d759dbf7c",
+  "lastOpenFiles": [
+    "Privacy Policy.md",
+    "Welcome.md",
+    "Impressum.md",
+    "Home.md",
+    "_attachments/dotnet-logo.svg",
+    "_attachments",
+    "DotNET/Libraries.md",
+    "DotNET/Test Frameworks.md",
+    "Library/Reqnroll.md",
+    "Library/SpecFlow.md",
+    "Java/Libraries.md",
+    "Java/Test Frameworks.md",
+    "Library/Cucumber.md",
+    "templates/library.md",
+    "templates/testframeworks.md",
+    "Library/FakeItEasy.md",
+    "Library/Moq.md",
+    "Java",
+    "Test Frameworks/JUnit.md",
+    "Test Frameworks/MSTest.md",
+    "templates",
+    "Test Frameworks/xUnit.md",
+    "Test Frameworks/NUnit.md",
+    "DotNET",
+    "index.md",
+    "Wohnung/Smart Home fertigmachen.md",
+    "Personen/Gabi.md",
+    "Personen/Isabel Birnstingl.md",
+    "Personen/Harald Deitzer.md",
+    "Personen/Sven Schweiger.md",
+    "My Life as RPG/My Quests.canvas",
+    "Pasted image 20241107072942.png",
+    "Pasted image 20241103080907.png",
+    "Pasted image 20241031070817.png",
+    "Pasted image 20241025172412.png",
+    "TechTalk/Bewerber",
+    "Pasted image 20241024080016.png",
+    "Pasted image 20241024072058.png",
+    "attachments/Pasted image 20241022072217.png",
+    "Pasted image 20241022072217 1.png",
+    "attachments/Pasted image 20240927072315.png",
+    "attachments",
+    "_archive/Future.canvas",
+    "_archive",
+    "Businessideen/Family365",
+    "Businessideen",
+    "My Life as RPG"
+  ]
+}
