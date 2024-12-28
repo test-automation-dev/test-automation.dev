@@ -1,0 +1,52 @@
+MinimumStatiqWebVersion-CleanBlog: "1.0.0-beta.55"
+SiteTitle: Test-Automation.dev
+PageTitle: |
+  =>
+  {
+    string siteTitle = Context.GetString("SiteTitle");
+    string partTitle = GetString("part_title");
+    string title = GetString("title");
+
+    if (string.IsNullOrWhiteSpace(siteTitle))
+    {
+        return title;
+    }
+    else
+    {
+        if (string.IsNullOrWhiteSpace(title))
+        {
+            if (string.IsNullOrWhiteSpace(partTitle))
+            {
+                return siteTitle;
+            }
+            else
+            {
+                return partTitle;
+            }
+        }
+        else
+        {
+            if (string.IsNullOrWhiteSpace(partTitle))
+            {
+                return $"{siteTitle} - {title}";
+            }
+            else
+            {
+                if (partTitle == title)
+                {
+                    return title;
+                }
+                else
+                {
+                    return $"{partTitle} - {title}";
+                }
+            }
+        }
+    }
+  }
+Copyright: => $"Copyright © {DateTime.Now.Year}"
+PostSources: posts/**/*.html
+IsPost: => Outputs.FilterSources(Context.GetString("PostSources")).ContainsById(Document)
+Layout: /_Layout.cshtml
+Host: test-automation.dev
+LinksUseHttps: true
