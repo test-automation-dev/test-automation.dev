@@ -5,10 +5,23 @@ import * as Component from "./quartz/components"
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [],
+  afterBody: [
+    Component.Comments({
+      provider: 'giscus',
+      options: {
+        repo: 'test-automation-dev/test-automation.dev',
+        repoId: 'R_kgDOJnD70Q',
+        category: 'Announcements',
+        categoryId: 'DIC_kwDOJnD70c4CW19M',
+      }
+    }),
+  ],
   footer: Component.Footer({
     links: {
-      GitHub: "https://github.com/test-automation-dev/test-automation.dev"
+      Source: "https://github.com/test-automation-dev/test-automation.dev",
+      Impressum: "/Impressum",
+      "Privacy Policy": "/Privacy-Policy"
+
     },
   }),
 }
@@ -26,7 +39,15 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.Explorer()),
+    Component.DesktopOnly(Component.Explorer(
+      {
+        title: "Content",
+        filterFn: (node) => {
+          // exclude files with the tag "explorerexclude"
+          return node.file?.frontmatter?.tags?.includes("explorerexclude") !== true
+        },
+      }
+    )),
   ],
   right: [
     // Component.Graph(),
