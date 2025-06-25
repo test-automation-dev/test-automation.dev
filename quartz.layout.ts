@@ -46,6 +46,7 @@ export const defaultContentPageLayout: PageLayout = {
           // exclude files with the tag "explorerexclude"
           return node.file?.frontmatter?.tags?.includes("explorerexclude") !== true
         },
+        folderClickBehavior: "link"
       }
     )),
   ],

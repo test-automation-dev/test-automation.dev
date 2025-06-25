@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Impressum.md",
+                "file": "index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Impressum"
+              "title": "index"
             }
           }
         ],
@@ -152,10 +152,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Impressum.md"
+                "file": "index.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Impressum"
+              "title": "Outline of index"
             }
           },
           {
@@ -188,8 +188,11 @@
   },
   "active": "46f47d8d759dbf7c",
   "lastOpenFiles": [
-    "Privacy Policy.md",
+    "DotNET/index.md",
+    "index.md",
+    "DotNET/index asdf.md",
     "Impressum.md",
+    "Privacy Policy.md",
     "Test Frameworks/xUnit.md",
     "Java/Test Frameworks.md",
     "Java/Libraries.md",
@@ -212,12 +215,10 @@
     "templates",
     "Test Frameworks/NUnit.md",
     "DotNET",
-    "index.md",
     "Wohnung/Smart Home fertigmachen.md",
     "Personen/Gabi.md",
     "Personen/Isabel Birnstingl.md",
     "Personen/Harald Deitzer.md",
-    "Personen/Sven Schweiger.md",
     "My Life as RPG/My Quests.canvas",
     "Pasted image 20241107072942.png",
     "Pasted image 20241103080907.png",
